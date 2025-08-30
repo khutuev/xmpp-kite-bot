@@ -9,5 +9,5 @@ services:
       - ./package.json:/app/package.json
     environment:
       - DB_PATH=/external_db/database.sqlite
-    ports:
-      - "3000:3000"
+    env_file:
+      - .env
