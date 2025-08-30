@@ -1,0 +1,22 @@
+{
+  "name": "xmpp-kite-bot",
+  "version": "1.0.0",
+  "description": "Умный XMPP-бот, который сообщает текущую погоду и анализирует, можно ли в таких условиях запускать воздушного змея.",
+  "license": "ISC",
+  "author": "Tamerlan Khutuev",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/xmpp__client": "^0.13.3",
+    "@xmpp/client": "^0.13.6",
+    "better-sqlite3": "^12.2.0",
+    "node-cron": "^4.2.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
