@@ -3,6 +3,7 @@ version: '3.8'
 services:
   app:
     build: .
+    restart: unless-stopped
     volumes:
       - ./db:/external_db
       - ./src:/app/src

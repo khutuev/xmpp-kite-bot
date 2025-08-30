@@ -194,7 +194,7 @@ export async function getKiteMessage(lat: number, lon: number): Promise<KiteMess
   }
  
   const message = `
-📍 Погода для ${getCityFromCoordinates(lat, lon)}:
+📍 Погода для ${await getCityFromCoordinates(lat, lon)}:
 🌡 Температура: ${temp}°C
 🌬 Ветер: ${windSpeed} м/с, направление ${windDir}°
 ☀️ Восход: ${sunrise.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
@@ -270,7 +270,7 @@ function isCoords(body: string) {
   return body.startsWith('geo:')
 }
 
-function processingSetCoordsMessage(from: string, message: string): void {
+async function processingSetCoordsMessage(from: string, message: string): Promise<void> {
   const coords = message.slice(4).split(',')
 
   if (coords.length === 2) {
@@ -286,7 +286,7 @@ function processingSetCoordsMessage(from: string, message: string): void {
         createSubscription(from, lat, lon, '08:00')
       }
 
-      sendMessage(from, getCityFromCoordinates(lat, lon) + ' ' + COORDS_SAVE_MESSAGE)
+      sendMessage(from, await getCityFromCoordinates(lat, lon) + ' ' + COORDS_SAVE_MESSAGE)
     } else {
       sendMessage(from, WRONG_COORDS_MESSAGE)
     }
