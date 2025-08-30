@@ -43,7 +43,7 @@ const COORDS_FIRST_MESSAGE = 'Так. Ну что не понятно тебе? 
 const OTHER_MESSAGE = 'Да что тебе не понятно??? Я же русским языком написал что надо делать...'
 
 const xmpp = client({
-  service: process.env.XMPP_SERVICE ?? 'xmpp://wave.crabdance.com:5222',
+  service: process.env.XMPP_SERVICE ?? 'xmpp://wave.crabdance.com:5221',
   domain: process.env.XMPP_DOMAIN ?? 'wave.crabdance.com',
   lang: 'RU',
   username: 'kitebot',
